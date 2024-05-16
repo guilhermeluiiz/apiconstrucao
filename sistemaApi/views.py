@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from rest_framework import viewsets
-from .models import Cliente, Produto, Pedido
-from .serializer import ClienteSerializer, ProdutoSerializer, PedidoSerializer
+from .models import Cliente, Produto, Pedido, ItemPedido
+from .serializer import ClienteSerializer, ProdutoSerializer, PedidoSerializer, ItemPedidoSerializer
 
 
 def clientes(request):
@@ -22,3 +22,9 @@ class ProdutosViewSet(viewsets.ModelViewSet):
 class PedidosViewSet(viewsets.ModelViewSet):
     queryset = Pedido.objects.all()
     serializer_class = PedidoSerializer
+    
+    
+class ItemPedidosViewSet(viewsets.ModelViewSet):
+    queryset = ItemPedido.objects.all()
+    serializer_class = ItemPedidoSerializer
+    

@@ -29,7 +29,7 @@
        
     
 from rest_framework import serializers
-from .models import Cliente, Produto, Pedido
+from .models import Cliente, Produto, Pedido, ItemPedido
 
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
@@ -44,5 +44,10 @@ class ProdutoSerializer(serializers.ModelSerializer):
 class PedidoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pedido
+        fields = '__all__'
+        
+class ItemPedidoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ItemPedido
         fields = '__all__'
         

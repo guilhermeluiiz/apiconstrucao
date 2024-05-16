@@ -49,9 +49,10 @@ class Pedido(models.Model):
         return self.status
         
 class ItemPedido(models.Model):
-    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
-    quantidade = models.IntegerField()
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
+    quantidade = models.PositiveIntegerField()
+    preco = models.DecimalField(max_digits=10, decimal_places=2)
 
     
 

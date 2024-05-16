@@ -23,12 +23,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from sistemaApi.views import ClientesViewSet, ProdutosViewSet
+from sistemaApi.views import ClientesViewSet, ProdutosViewSet, PedidosViewSet, ItemPedidosViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'clientes', ClientesViewSet, basename='Clientes')
 router.register(r'produtos', ProdutosViewSet, basename='Produtos')
+router.register(r'pedidos', PedidosViewSet, basename='Pedidos')
+router.register(r'ItemPedidos', ItemPedidosViewSet, basename='ItemPedidos')
 
 
 

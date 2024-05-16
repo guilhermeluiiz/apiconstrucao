@@ -15,3 +15,13 @@ class Produtos(admin.ModelAdmin):
     search_fields = ('nome',)
 
 admin.site.register(Produto, Produtos)
+
+class Pedidos(admin.ModelAdmin):
+    list_display = ('id', 'produto', 'cliente', 'status')
+    list_display_links = ('id', 'produto')
+    search_fields = ('produto',)
+    
+class ItemPedidos(admin.ModelAdmin):
+    list_display = ('id', 'pedido', 'produto', 'quantidade', 'preco')
+    list_display_links = ('id', 'quantidade')
+    search_fields = ('produto')
